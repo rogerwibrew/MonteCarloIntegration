@@ -5,8 +5,8 @@ bool function(double x, double y);
 
 int main() {
 
-    RandomNumberGenerator xGenerator(0.0, 1.0);
-    RandomNumberGenerator yGenerator(0.0, 1.0);
+    RandomNumberGenerator xGenerator(1.0, 2.0);
+    RandomNumberGenerator yGenerator(0.0, 8.0);
 
     int iterations{100000};
     int underCurve{0};
@@ -21,7 +21,7 @@ int main() {
             underCurve++;
     }
 
-    double rectangle = 1.0;
+    double rectangle = 8.0;
     double Area = rectangle * (double) underCurve / (double) iterations;
 
     std::cout << Area << std::endl;
@@ -31,9 +31,9 @@ int main() {
 
 bool function(double x, double y) {
 
-    double func = pow(x, 2.0);
+    double func = pow(x, 3.0);
 
-    if (y < func)
+    if(y < func)
         return true;
     return false;
 }
