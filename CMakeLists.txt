@@ -1,7 +1,12 @@
-cmake_minimum_required(VERSION 3.7)
+cmake_minimum_required(VERSION 2.8)
 project(MonteCarlo2)
 
-set(CMAKE_CXX_STANDARD 11)
+# set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp RandomNumberGenerator.cpp RandomNumberGenerator.h Integrator.cpp Integrator.hpp)
-add_executable(MonteCarlo2 ${SOURCE_FILES})
+SET(CMAKE_CXX_FLAGS "-std=c++11")
+
+include_directories(include)
+
+file(GLOB SOURCES "src/*.cpp")
+
+add_executable(MonteCarlo2 ${SOURCES})
